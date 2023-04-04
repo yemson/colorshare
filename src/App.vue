@@ -11,8 +11,5 @@ import TopNavBar from './components/TopNavBar.vue'
     <main>
       <RouterView />
     </main>
-    <footer>
-      <BottomNav />
-    </footer>
   </div>
 </template>
