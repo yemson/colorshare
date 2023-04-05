@@ -1,5 +1,5 @@
 <script setup>
-import UserIcon from './icons/UserIcon.vue'
+import QuestionIcon from './icons/QuestionIcon.vue'
 </script>
 
 <template>
@@ -12,11 +12,5 @@ import UserIcon from './icons/UserIcon.vue'
         색감나눔
       </router-link>
     </div>
-    <router-link
-      to="/login"
-      class="btn btn-ghost"
-    >
-      <UserIcon />
-    </router-link>
   </div>
 </template>

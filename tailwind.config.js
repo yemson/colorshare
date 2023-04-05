@@ -18,6 +18,9 @@ module.exports = {
       center: true
     }
   },
-  plugins: [require('daisyui')]
+  plugins: [require('daisyui')],
+  daisyui: {
+    themes: ['emerald'],
+  },
 }
 
