@@ -1,5 +1,5 @@
 <script setup>
-import QuestionIcon from './icons/QuestionIcon.vue'
+
 </script>
 
 <template>

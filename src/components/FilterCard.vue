@@ -20,25 +20,27 @@ defineProps({
         <ChevronIcon />
       </button>
     </div>
-    <div class="carousel space-x-3 mt-2">
+    <div class="carousel h-[13rem] space-x-3 mt-2">
       <div
         v-for="i in 10"
         :key="i"
         class="carousel-item"
       >
-        <div class="card card-compact w-48 h-52 bg-base-100 image-full">
+        <div class="card card-compact w-48 max-w-[12rem] h-48 bg-base-100 image-full">
           <figure>
             <img
               src="https://picsum.photos/seed/picsum/200/300"
               alt="Picture"
-              class="object-cover w-48 h-52"
+              class="object-cover w-48 h-48"
             >
           </figure>
           <div class="card-body">
-            <h2 class="card-title">
-              Shoes!
+            <h2 class="font-bold text-xl text-ellipsis overflow-hidden break-words line-clamp-2 w-[10rem]">
+              듣기만 우리의 두기 이 더운지라 교향악이다.
             </h2>
-            <p>If a dog chews shoes whose shoes does he choose?</p>
+            <p class="w-[10rem] text-ellipsis overflow-hidden line-clamp-5 break-words">
+              때에, 그들의 황금시대의 끓는다. 없는 피고, 충분히 그들의 용기가 길을 대고, 힘있다. 일월과 싶이 뼈 이것이다. 속에서 끓는 같이 쓸쓸하랴?
+            </p>
           </div>
         </div>
       </div> 
