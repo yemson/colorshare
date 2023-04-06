@@ -1,16 +1,23 @@
 <script setup>
+import { onMounted } from 'vue'
+import { useUserStore } from '../stores/user'
 
+const store = useUserStore()
+
+onMounted(() => {
+  store.userState()
+})
 </script>
 
 <template>
   <div class="navbar bg-base-100">
     <div class="flex-1">
-      <router-link
+      <RouterLink
         to="/"
-        class="btn btn-ghost normal-case text-xl"
+        class="normal-case text-xl font-bold px-3"
       >
         색감나눔
-      </router-link>
+      </RouterLink>
     </div>
   </div>
 </template>

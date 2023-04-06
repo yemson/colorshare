@@ -2,7 +2,7 @@
 import { defineProps } from 'vue'
 import ChevronIcon from './icons/ChevronIcon.vue'
 
-defineProps({
+const props = defineProps({
   categoryTitle: {
     type: String,
     default: ''
@@ -14,9 +14,12 @@ defineProps({
   <div>
     <div class="flex flex-row justify-between">
       <h1 class="text-xl font-bold place-self-center">
-        {{ categoryTitle }}
+        {{ props.categoryTitle }}
       </h1>
-      <button class="btn btn-ghost btn-sm">
+      <button
+        class="btn btn-ghost btn-sm"
+        aria-label="더보기"
+      >
         <ChevronIcon />
       </button>
     </div>
