@@ -12,18 +12,17 @@ function login(email, password) {
   .then(() => {
     router.replace('/')
   })
-  .catch((error) => {
-    const errorCode = error.code
-    const errorMessage = error.message
-    console.log(errorCode, errorMessage)
+  .catch(() => {
+    alert('이메일 또는 비밀번호가 잘못되었습니다!')
+    inputPassword.value = ''
   })
 }
 </script>
 
 <template>
   <div class="px-12">
-    <div class="mb-2 mt-12">
-      <h1 class="text-3xl font-bold">
+    <div class="mt-12">
+      <h1 class="text-3xl font-bold mb-1">
         로그인
       </h1>
       <h3 class="text-sm">
