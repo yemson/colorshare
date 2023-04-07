@@ -51,13 +51,11 @@ function logout() {
     >
       <div class="flex flex-row gap-2 basis-5/6">
         <div class="avatar placeholder">
-          <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-            <span>{{ store.getUserInfo.email[0] }}</span>
-          </div>
+          <div class="bg-neutral-focus text-neutral-content rounded-full w-12" />
         </div>
         <div class="flex flex-col">
           <div class="font-bold">
-            {{ store.getUserInfo.email }}
+            {{ store.getUserInfo.displayName }}
           </div>
           <div class="text-sm truncate max-w-[12rem]">
             나만의 필터를 공유하세요!
