@@ -1,7 +1,12 @@
 <script setup>
+import { onMounted } from 'vue'
 import FilterCard from '../components/FilterCard.vue'
 import UserInfo from '../components/UserInfo.vue'
 import PlusIcon from '../components/icons/PlusIcon.vue'
+
+onMounted(() => {
+  window.scrollTo(0, 0)
+})
 </script>
 
 <template>
