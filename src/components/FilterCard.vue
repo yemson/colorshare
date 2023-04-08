@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
 import ChevronIcon from './icons/ChevronIcon.vue'
 
 const props = defineProps({
