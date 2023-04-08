@@ -33,19 +33,40 @@ function updateDisplayName(displayName) {
         계정 설정
       </h1>
     </div>
+    <!-- <div class="form-control">
+      <h2 class="font-bold mb-1">
+        프로필 사진
+      </h2>
+      <input
+        type="file"
+        class="file-input file-input-bordered file-input-sm w-full max-w-xs"
+      >
+    </div> -->
     <div class="form-control">
+      <h2 class="font-bold mt-2 mb-1">
+        닉네임
+      </h2>
       <input
         v-model="inputDisplayName"
         type="text"
         :placeholder="auth.currentUser.displayName"
-        class="input input-bordered w-full my-2"
+        class="input input-bordered w-full mb-2"
       >
-      <button
-        class="btn btn-primary w-full mt-2"
-        @click="updateDisplayName(inputDisplayName)"
-      >
-        수정
-      </button>
+      <div class="space-y-3">
+        <button
+          class="btn btn-primary w-full mt-2"
+          @click="updateDisplayName(inputDisplayName)"
+        >
+          수정
+        </button>
+        <RouterLink
+          to="/"
+          class="btn btn-outline
+           w-full"
+        >
+          취소
+        </RouterLink>
+      </div>
     </div>
   </div>
 </template>
