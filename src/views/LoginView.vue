@@ -3,23 +3,34 @@ import { ref } from 'vue'
 import { signInWithEmailAndPassword } from '@firebase/auth'
 import { auth } from '../firebase'
 import router from '@/router'
+import LoadingIcon from '../components/icons/LoadingIcon.vue'
 
 const inputEmail = ref('')
 const inputPassword = ref('')
+const loginLoading = ref(false)
 
 function login(email, password) {
+  loginLoading.value = true
   signInWithEmailAndPassword(auth, email, password)
   .then(() => {
-    router.replace('/')
+    router.push('/')
+    loginLoading.value = false
   })
   .catch(() => {
     alert('이메일 또는 비밀번호가 잘못되었습니다!')
     inputPassword.value = ''
+    loginLoading.value = false
   })
 }
 </script>
 
 <template>
+  <div
+    v-if="loginLoading"
+    class="flex items-center justify-center absolute inset-0 bg-black bg-opacity-30 z-50"
+  >
+    <LoadingIcon />
+  </div>
   <div class="px-12">
     <div class="mt-12">
       <h1 class="text-3xl font-bold mb-1">
