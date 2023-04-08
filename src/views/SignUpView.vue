@@ -9,11 +9,11 @@ const inputEmail = ref('')
 const inputPassword = ref('')
 const inputCheckPassword = ref('')
 const inputDisplayName = ref('')
-const signupLoading = ref(false)
+const createUserLoading = ref(false)
 
-function signup(email, password, displayName) {
+function createUser(email, password, displayName) {
   if (inputPassword.value !== '' && inputPassword.value === inputCheckPassword.value && inputDisplayName.value !== '') {
-    signupLoading.value = true
+    createUserLoading.value = true
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user
@@ -21,28 +21,28 @@ function signup(email, password, displayName) {
         displayName: displayName
       }).then(() => {
         router.replace('/')
-        signupLoading.value = false
+        createUserLoading.value = false
       }).catch((error) => {
         const errorCode = error.code
         alert('ERROR: ', errorCode)
-        signupLoading.value = false
+        createUserLoading.value = false
       })
     })
     .catch((error) => {
       const errorCode = error.code
       alert('ERROR: ', errorCode)
-      signupLoading.value = false
+      createUserLoading.value = false
     }) 
   } else {
     alert('비밀번호 또는 닉네임을 다시 입력해주세요!')
-    signupLoading.value = false
+    createUserLoading.value = false
   }
 }
 </script>
 
 <template>
   <div
-    v-if="signupLoading"
+    v-if="createUserLoading"
     class="flex items-center justify-center absolute inset-0 bg-black bg-opacity-30 z-50"
   >
     <LoadingIcon />
@@ -83,7 +83,7 @@ function signup(email, password, displayName) {
       >
       <button
         class="btn btn-primary w-full mt-4"
-        @click="signup(inputEmail, inputCheckPassword, inputDisplayName)"
+        @click="createUser(inputEmail, inputCheckPassword, inputDisplayName)"
       >
         회원가입
       </button>

@@ -71,6 +71,11 @@ function logout() {
           tabindex="0"
           class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40"
         >
+          <li>
+            <RouterLink to="/setting">
+              설정
+            </RouterLink>
+          </li>
           <li><a @click="logout">로그아웃</a></li>
         </ul>
       </div>
